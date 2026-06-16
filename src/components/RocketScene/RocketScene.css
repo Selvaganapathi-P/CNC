@@ -1,0 +1,221 @@
+/* ===================== ROCKET SCENE ===================== */
+.rocket-scene-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rocket-canvas-mount {
+  width: 100%;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 22, 28, 0.2);
+  box-shadow: 0 0 60px rgba(192, 22, 28, 0.1), 0 0 120px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+}
+
+.rocket-canvas-mount:active {
+  cursor: grabbing;
+}
+
+.rocket-canvas-mount canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.rocket-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-family: var(--font-accent, 'Oswald', sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.4s ease;
+}
+
+.rocket-hint--success {
+  color: var(--color-gold, #c8a84b);
+}
+
+.rocket-hint-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-red, #c0161c);
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.6); }
+}
+
+.rocket-controls-hint {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+/* ── FALLBACK 2D SCENE ── */
+.rocket-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 24px;
+}
+
+.rocket-2d {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  transition: transform 0.3s ease;
+  position: relative;
+  user-select: none;
+}
+
+.rocket-2d:hover {
+  transform: scale(1.02);
+}
+
+.r2d-nose {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid #c0161c;
+}
+
+.r2d-body {
+  width: 80px;
+  height: 160px;
+  background: linear-gradient(180deg, #8899aa, #556677);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  border-radius: 0 0 4px 4px;
+}
+
+.r2d-stripe {
+  width: 80px;
+  height: 8px;
+  background: #c0161c;
+  position: absolute;
+}
+
+.r2d-stripe:nth-child(1) { top: 30px; }
+.r2d-stripe:nth-child(2) { top: 80px; }
+
+.r2d-window {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #88ccff, #224466);
+  border: 3px solid #c8a84b;
+  margin-top: 40px;
+}
+
+.r2d-ring {
+  width: 120px;
+  height: 20px;
+  border: 8px solid #c8a84b;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%) translateX(-100px) rotate(-15deg);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0.7;
+}
+
+.r2d-ring--on {
+  transform: translateX(-50%) rotate(0deg);
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(200, 168, 75, 0.5);
+}
+
+.r2d-fins {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  margin-top: -8px;
+}
+
+.r2d-fin {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+}
+
+.r2d-fin--left {
+  border-right: 30px solid #c0161c;
+}
+
+.r2d-fin--right {
+  border-left: 30px solid #c0161c;
+}
+
+.r2d-exhaust {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.r2d-flame {
+  width: 30px;
+  height: 50px;
+  background: linear-gradient(180deg, #ffaa00, #ff4400, transparent);
+  border-radius: 0 0 50% 50%;
+  animation: flicker 0.15s ease-in-out infinite alternate;
+  opacity: 0.9;
+}
+
+@keyframes flicker {
+  from { transform: scaleX(1) scaleY(1); opacity: 0.9; }
+  to { transform: scaleX(0.85) scaleY(1.1); opacity: 0.7; }
+}
+
+.rocket-fallback-hint {
+  color: var(--color-text-muted, #888);
+  font-family: var(--font-accent, 'Oswald', sans-serif);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.rocket-fallback-note {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.rocket-fallback-note code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--color-gold, #c8a84b);
+}
+
+@media (max-width: 600px) {
+  .rocket-canvas-mount {
+    height: 380px;
+  }
+}

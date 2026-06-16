@@ -1,0 +1,4 @@
+.counter{text-align:center;padding:1.25rem 0.75rem}
+.counter__value{font-family:var(--f-display);font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;color:var(--indigo);line-height:1;letter-spacing:-0.02em;display:flex;align-items:baseline;justify-content:center;gap:0.1rem}
+.counter__label{font-family:var(--f-head);font-size:0.9rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt);margin-top:0.5rem}
+.counter__sublabel{font-size:0.72rem;color:var(--txt-3);margin-top:0.2rem}

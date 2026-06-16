@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# MILLTECH CNC — Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Manufacturer of Heavy Engineering Components | Chennai, India**
 
-## Available Scripts
+Built with React CRA · Plain CSS · React Router DOM · Three.js (3D scene)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+# 1. Install dependencies
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 2. Start dev server
+npm start
 
-### `npm test`
+# 3. Open http://localhost:3000
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+milltech-cnc/
+├── public/
+│   ├── index.html          ← Three.js CDN + Google Fonts loaded here
+│   ├── images/
+│   │   ├── products/       ← Add product photos here (product-1.jpg etc.)
+│   │   └── machines/       ← Add machine photos here
+│   └── videos/             ← Add factory/product videos here (mp4)
+└── src/
+    ├── App.js              ← Router setup
+    ├── index.js
+    ├── components/
+    │   ├── Navbar/
+    │   ├── Footer/
+    │   ├── AnimatedCounter/
+    │   ├── ProductCard/
+    │   ├── ReviewSlider/
+    │   └── RocketScene/    ← Interactive Three.js 3D scene
+    ├── pages/
+    │   ├── Home/
+    │   ├── AboutUs/
+    │   ├── Products/
+    │   ├── ProductDetail/
+    │   ├── Machines/
+    │   ├── Services/
+    │   │   └── Aerospace/  ← Full aerospace page with 3D scene
+    │   └── ContactUs/
+    ├── data/
+    │   ├── products.js     ← Edit product details here
+    │   ├── machines.js     ← Edit machine specs here
+    │   └── reviews.js      ← Edit testimonials here
+    ├── hooks/
+    │   └── useScrollReveal.js
+    └── styles/
+        ├── variables.css   ← Colors, fonts, design tokens
+        ├── animations.css  ← Keyframe library
+        └── global.css      ← Reset + global utilities
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Adding Real Product Photos
 
-### `npm run eject`
+Place photos in `public/images/products/` and update `src/data/products.js`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```js
+// src/data/products.js
+export const products = [
+  {
+    id: 1,
+    name: "Fore End Ring Ø 2840 (ALU)",
+    image: "/images/products/fore-end-ring.jpg",  // ← add your image path
+    // ...
+  }
+]
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## EmailJS Setup (Contact Form)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Create account at [emailjs.com](https://www.emailjs.com)
+2. Add an Email Service (Gmail)
+3. Create a template with variables: `{{from_name}}`, `{{from_email}}`, `{{phone}}`, `{{message}}`
+4. Create a `.env` file in the project root:
 
-## Learn More
+```
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. In `src/pages/ContactUs/ContactUs.js`, uncomment the EmailJS send block and update the env variable names.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Three.js 3D Rocket Scene
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Three.js is loaded via CDN in `public/index.html`:
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+```
 
-### Analyzing the Bundle Size
+**What it does:**
+- Shows a 3D rocket + floating ring with starfield background
+- **Click the ring** → ring flies and slots into the rocket
+- **Click the rocket** → ring detaches and floats back
+- **Drag to rotate** → manual orbit controls
+- Falls back to a CSS-animated 2D rocket if Three.js fails to load
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Deploy to Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+# Build
+npm run build
 
-### Advanced Configuration
+# Option A — Vercel CLI
+npm i -g vercel
+vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Option B — GitHub
+# Push to GitHub → import repo at vercel.com → auto deploys
+```
 
-### Deployment
+Add environment variables in Vercel dashboard under **Settings → Environment Variables**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Customisation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Change Colours
+Edit `src/styles/variables.css`:
+```css
+--color-red: #C0161C;    /* Primary red */
+--color-gold: #C8A84B;   /* Gold accent */
+--color-bg: #0a0a0a;     /* Background */
+```
+
+### Add More Products
+Edit `src/data/products.js` — each product needs: `id`, `name`, `image`, `category`, `specs`, `description`, `material`, `client`.
+
+### Add More Machines
+Edit `src/data/machines.js` — each machine needs: `id`, `name`, `unit`, `make`, `description`, `control`, `specs` (object), `image`.
+
+---
+
+## Contact
+
+**BARANEETHARAN** — MILLTECH CNC, Chennai  
+📞 9444058659 / 8072515869  
+📧 btharan76@gmail.com / baranee_i@rediffmail.com  
+📍 No. 101/1, SIDCO Industrial Estate, Thirumudivakkam, Chennai 600132

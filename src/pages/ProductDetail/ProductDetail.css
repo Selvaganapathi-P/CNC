@@ -1,0 +1,64 @@
+/* ══════════════ PRODUCT DETAIL ══════════════ */
+.product-detail { background: var(--bg); min-height: 100vh; }
+
+.product-not-found { min-height: 80vh; display: flex; align-items: center; padding-top: var(--nav-h); }
+.product-not-found h2 { font-family: var(--f-head); font-size: 2rem; color: var(--txt); margin-bottom: 1rem; }
+.product-not-found p { color: var(--txt-3); margin-bottom: 2rem; }
+
+/* HERO */
+.pd-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex; align-items: flex-end;
+  padding-bottom: 4rem;
+  padding-top: calc(var(--nav-h) + 2rem);
+  overflow: hidden;
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 40%, #E8192C 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+}
+.pd-hero__svg-bg { position: absolute; inset: 0; opacity: 0.12; }
+.pd-hero__svg-bg svg { width: 100%; height: 100%; object-fit: cover; }
+.pd-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,23,42,0.4) 0%, transparent 60%);
+}
+.pd-hero__content { position: relative; z-index: 2; }
+.pd-hero__back { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-family: var(--f-head); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; padding: 0.5rem 1rem; border-radius: var(--r-sm); cursor: pointer; margin-bottom: 1.5rem; display: inline-block; transition: all var(--fast); backdrop-filter: blur(8px); }
+.pd-hero__back:hover { background: rgba(255,255,255,0.2); color: #fff; }
+.pd-hero__meta { }
+.pd-hero__title { font-family: var(--f-display); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; color: #fff; line-height: 1; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.75rem; text-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+
+/* BODY */
+.pd-body { padding: var(--s-xl) 0; }
+.pd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+/* INFO */
+.pd-section { margin-bottom: 2.5rem; }
+.pd-section__title { font-family: var(--f-head); font-size: 1.15rem; font-weight: 600; color: var(--txt); letter-spacing: 0.04em; margin-bottom: 0.25rem; }
+.pd-description { color: var(--txt-2); line-height: 1.8; font-size: 0.97rem; }
+
+/* SPECS TABLE */
+.pd-specs-table { width: 100%; border-collapse: collapse; }
+.pd-specs-row { border-bottom: 1px solid rgba(100,116,139,0.08); animation: fadeUp 0.4s var(--ease) both; }
+.pd-specs-row:last-child { border-bottom: none; }
+.pd-specs-key { padding: 0.7rem 0; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--txt-4); width: 42%; }
+.pd-specs-val { padding: 0.7rem 0; font-size: 0.92rem; color: var(--txt); font-weight: 500; }
+
+/* CTA */
+.pd-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* GALLERY */
+.pd-gallery { }
+.pd-gallery__main { border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--sh-lg); border: 1px solid rgba(100,116,139,0.1); background: linear-gradient(135deg, var(--bg-3), var(--bg-4)); margin-bottom: 1.5rem; position: relative; }
+.pd-gallery__main img,
+.pd-gallery__main svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* MATERIAL CARD */
+.pd-material-card { background: #fff; border: 1px solid rgba(100,116,139,0.12); border-radius: var(--r-lg); padding: 1.5rem; box-shadow: var(--sh-sm); border-left: 4px solid var(--indigo); }
+.pd-material-card__label { font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--txt-4); margin-bottom: 0.4rem; }
+.pd-material-card__value { font-family: var(--f-head); font-size: 1.1rem; font-weight: 600; color: var(--txt); }
+.pd-material-card__note { font-size: 0.8rem; color: var(--txt-3); margin-top: 0.4rem; line-height: 1.5; }
+
+@media (max-width: 900px) { .pd-grid { grid-template-columns: 1fr; gap: 2.5rem; } .pd-gallery { order: -1; } }
+@media (max-width: 640px) { .pd-hero__title { font-size: clamp(2rem, 10vw, 3rem); } .pd-cta { flex-direction: column; } }

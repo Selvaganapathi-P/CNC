@@ -1,0 +1,17 @@
+.product-svg-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.product-img-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #161B27, #1E2535);
+  color: #4A5568;
+  font-size: 2rem;
+  font-family: 'Rajdhani', sans-serif;
+}

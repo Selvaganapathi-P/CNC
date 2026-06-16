@@ -1,0 +1,136 @@
+// Each product has its own unique individual image
+export const products = [
+  {
+    id: 1,
+    name: 'Fore End Ring Ø 2840',
+    shortName: 'Fore End Ring',
+    category: 'aerospace',
+    tag: 'ISRO',
+    material: 'Aluminium Alloy (ALU)',
+    diameter: '2840 mm',
+    // ISRO PSLV strap-on assembly — Wikimedia Commons (ISRO, public domain)
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/PSLV-C40-_One_of_the_strap-ons_being_assembled_with_core_stage.jpg/800px-PSLV-C40-_One_of_the_strap-ons_being_assembled_with_core_stage.jpg',
+    description: 'Precision-machined aluminium fore end ring for ISRO launch vehicle payload fairing. Manufactured to tight aerospace tolerances on our large-capacity BERTHIEZ CNC VTL.',
+    specs: { Diameter: 'Ø 2840 mm', Material: 'Aluminium Alloy', Process: 'CNC VTL Turning', Tolerance: '±0.05 mm', Surface: 'As Machined / Anodised', Client: 'ISRO' },
+  },
+  {
+    id: 2,
+    name: 'AFT Shield Assembly Fix',
+    shortName: 'AFT Shield',
+    category: 'aerospace',
+    tag: 'ISRO',
+    material: 'Structural Steel',
+    diameter: '—',
+    // PSLV nozzle end segment — Wikimedia Commons (ISRO, public domain)
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PSLV-C51%2C_Amaz%C3%B4nia-1-_Nozzle_End_Segment_of_S139_solid_core_being_placed..jpg/600px-PSLV-C51%2C_Amaz%C3%B4nia-1-_Nozzle_End_Segment_of_S139_solid_core_being_placed..jpg',
+    description: 'Robust aft shield assembly fixture used during integration of ISRO launch vehicle stages. Fabricated and machined for zero-compromise structural integrity.',
+    specs: { Type: 'Assembly Fixture', Material: 'Structural Steel', Process: 'Fabrication + CNC Machining', Finish: 'Zinc Primer', Client: 'ISRO' },
+  },
+  {
+    id: 3,
+    name: 'AE Ring Ø 2250',
+    shortName: 'AE Ring',
+    category: 'aerospace',
+    tag: 'ISRO',
+    material: 'Alloy Steel',
+    diameter: '2250 mm',
+    // PSLV hoisting — Wikimedia Commons (ISRO, public domain)
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/PSLV-C51%2C_Amaz%C3%B4nia-1-_Hoisting_of_Head_End_Segment_of_S139_solid_core.jpg/600px-PSLV-C51%2C_Amaz%C3%B4nia-1-_Hoisting_of_Head_End_Segment_of_S139_solid_core.jpg',
+    description: 'Large-diameter aft end ring for rocket stage integration, machined to micron-level accuracy using the BERTHIEZ 8.2m CNC VTL.',
+    specs: { Diameter: 'Ø 2250 mm', Material: 'Alloy Steel', Process: 'CNC VTL Turning', Tolerance: '±0.02 mm', Client: 'ISRO' },
+  },
+  {
+    id: 4,
+    name: 'T Bulk Ring Ø 2840',
+    shortName: 'T Bulk Ring',
+    category: 'aerospace',
+    tag: 'ISRO',
+    material: 'Aluminium Alloy',
+    diameter: '2840 mm',
+    // PSLV-C42 nozzle end — Wikimedia Commons (ISRO, public domain)
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/01_hoisting_of_nozzle_end_segment_of_pslv-c42_first_stage_over_launch_pedestal.jpg/800px-01_hoisting_of_nozzle_end_segment_of_pslv-c42_first_stage_over_launch_pedestal.jpg',
+    description: 'Thrust bulkhead ring machined from aircraft-grade aluminium. Load-bearing interface between propellant stage and payload bay on ISRO launch vehicles.',
+    specs: { Diameter: 'Ø 2840 mm', Material: 'Aluminium Alloy', Process: 'CNC VTL Turning', Client: 'ISRO PSLV' },
+  },
+  {
+    id: 5,
+    name: 'Canister Ø 2250',
+    shortName: 'Canister',
+    category: 'aerospace',
+    tag: 'ISRO / VSSC',
+    material: 'High-Strength Steel',
+    diameter: '2250 mm',
+    // CNC machining close-up — Unsplash free use
+    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800&q=80',
+    description: 'Cylindrical canister assembly for housing avionics and telemetry systems aboard ISRO launch vehicles. Manufactured at VSSC specifications.',
+    specs: { Diameter: 'Ø 2250 mm', Material: 'High Strength Steel', Process: 'CNC Turning + Milling', Client: 'ISRO / VSSC' },
+  },
+  {
+    id: 6,
+    name: 'Canister Ø 2500 HT-2250',
+    shortName: 'Canister XL',
+    category: 'aerospace',
+    tag: 'ISRO / VSSC',
+    material: 'High-Strength Steel',
+    diameter: '2500 mm',
+    // PSLV fully integrated — Wikimedia Commons (ISRO, public domain)
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/PSLV-C51%2C_Amaz%C3%B4nia-1-_Launch_vehicle_at_First_Launch_Pad_%28FLP%29_with_Mobile_Service_Platform_%28MST%29_retreated_002.jpg/400px-PSLV-C51%2C_Amaz%C3%B4nia-1-_Launch_vehicle_at_First_Launch_Pad_%28FLP%29_with_Mobile_Service_Platform_%28MST%29_retreated_002.jpg',
+    description: 'Larger-diameter canister with extended height for additional payload accommodation on ISRO GSLV and PSLV-XL vehicles.',
+    specs: { Diameter: 'Ø 2500 mm', Height: '2250 mm', Material: 'High Strength Steel', Client: 'ISRO GSLV / PSLV-XL' },
+  },
+  {
+    id: 7,
+    name: 'CEOS Adaptor Assembly',
+    shortName: 'CEOS Adaptor',
+    category: 'aerospace',
+    tag: 'Gaganyaan · VSSC',
+    material: 'Carbon Steel',
+    diameter: 'Fixed Config',
+    // PSLV on launch pad — Wikimedia Commons (ISRO, public domain)
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Fully_integrated_PSLV-C40_seen_with_Mobile_Service_Tower_retracted.jpg/600px-Fully_integrated_PSLV-C40_seen_with_Mobile_Service_Tower_retracted.jpg',
+    description: "Crew module adaptor for India's first crewed spaceflight mission — Gaganyaan. Manufactured, assembled, and painted by MILLTECH CNC under VSSC supervision.",
+    specs: { Type: 'Crew Module Adaptor', Material: 'Carbon Steel', Process: 'CNC Machining + Assembly + Painting', Programme: "Gaganyaan", Client: 'VSSC / ISRO' },
+  },
+  {
+    id: 8,
+    name: 'NADIR Assembly Fix',
+    shortName: 'NADIR Assy',
+    category: 'aerospace',
+    tag: 'ISRO',
+    material: 'Mild Steel',
+    diameter: '4.4 Metre Span',
+    // Aerospace satellite — Unsplash free use
+    image: 'https://images.unsplash.com/photo-1457364887197-9150188c107b?w=800&q=80',
+    description: 'Large nadir-pointing instrument mounting fixture with 4.4m span. Machined from structural steel for satellite integration at ISRO.',
+    specs: { Span: '4.4 Metres', Material: 'Mild Steel', Process: 'Fabrication + CNC Machining', Client: 'ISRO' },
+  },
+  {
+    id: 9,
+    name: 'CSAT Assembly Fix',
+    shortName: 'CSAT Assy',
+    category: 'aerospace',
+    tag: 'ISRO',
+    material: 'Mild Steel',
+    diameter: '4.2 Metre Span',
+    // Precision engineering — Unsplash free use
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80',
+    description: 'Communication satellite assembly fixture spanning 4.2m. Supports final integration operations for ISRO communication satellites.',
+    specs: { Span: '4.2 Metres', Material: 'Mild Steel', Process: 'Fabrication + CNC Machining', Client: 'ISRO ComSat' },
+  },
+  {
+    id: 10,
+    name: 'K-4 Missile Component',
+    shortName: 'K-4',
+    category: 'defence',
+    tag: 'BrahMos / DRDO',
+    material: 'High-Grade Alloy Steel',
+    diameter: '—',
+    // Aerospace / defence — Unsplash free use
+    image: 'https://images.unsplash.com/photo-1518364538800-6bae3c2ea0f2?w=800&q=80',
+    description: 'Mission-critical multi-stage stacked component for ballistic missile systems, machined under stringent defence security protocols.',
+    specs: { Programme: 'Defence — Restricted', Material: 'High-Grade Alloy Steel', Process: 'CNC Precision Machining', Client: 'BrahMos / DRDO' },
+  },
+];
+
+export const getProductById = (id) => products.find(p => p.id === parseInt(id));
+export const getProductsByCategory = (cat) => cat === 'all' ? products : products.filter(p => p.category === cat);
