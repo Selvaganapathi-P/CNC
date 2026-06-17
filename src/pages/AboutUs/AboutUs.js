@@ -31,9 +31,10 @@ const CLIENTS = [
 ];
 
 const AboutUs = () => {
-  const timelineRef = useScrollReveal();
-  const whoRef      = useScrollReveal();
-  const clientsRef  = useScrollReveal();
+  const timelineRef  = useScrollReveal();
+  const whoRef       = useScrollReveal();
+  const locationRef  = useScrollReveal();
+  const clientsRef   = useScrollReveal();
 
   return (
     <main className="about-page">
@@ -136,7 +137,7 @@ const AboutUs = () => {
       </section>
 
       {/* ── LOCATIONS ── */}
-      <section className="section location-section">
+      <section className="section location-section" ref={locationRef}>
         <div className="container">
           <div style={{textAlign:'center',marginBottom:'3rem'}}>
             <p className="section-eyebrow" style={{justifyContent:'center'}}>Find Us</p>
