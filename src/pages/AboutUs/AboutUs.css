@@ -1,7 +1,52 @@
 /* ═══════════════════════════════════════
-   ABOUT US — COMPLETE FIXED CSS
+   ABOUT US — CLEAN PROFESSIONAL CSS
 ═══════════════════════════════════════ */
 .about-page { background: var(--bg); min-height: 100vh; }
+
+/* ── CLEAN PAGE HEADER (replaces big banner) ── */
+.about-page-header {
+  position: relative;
+  padding-top: calc(var(--nav-h) + 3.5rem);
+  padding-bottom: 4rem;
+  overflow: hidden;
+}
+.about-page-header__bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #0D1B2A 0%, #1E3A5F 55%, #0D1B2A 100%);
+}
+.about-page-header__bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(200,16,46,0.10) 0%, transparent 55%);
+}
+.about-page-header__content { position: relative; z-index: 2; }
+.about-page-header__title {
+  font-family: var(--f-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0.5rem 0 0.85rem;
+  letter-spacing: 0.02em;
+}
+.about-page-header__title span { color: var(--red); }
+.about-page-header__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 480px;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.about-page-header__stats {
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.about-hero-stat { text-align: center; }
+.about-hero-stat__num { display: block; font-family: var(--f-display); font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; }
+.about-hero-stat__lbl { display: block; font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+.about-hero-stat__div { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
+
+/* VMQ cards */
 
 /* WHO WE ARE */
 .about-who { background: var(--bg-2); }

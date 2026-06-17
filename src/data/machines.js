@@ -1,5 +1,4 @@
-// src/data/machines.js
-// Every machine has its OWN unique individual image — no duplicates
+// src/data/machines.js — LOCAL ASSET IMAGES ADDED
 export const machines = [
   {
     id: 1,
@@ -8,8 +7,7 @@ export const machines = [
     make: 'DAHLIH — Taiwan',
     type: 'Vertical Machining Centre',
     highlight: '3-axis CNC milling centre for medium and large aerospace components with FANUC control system',
-    // CNC milling machine with spindle
-    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800&q=80',
+    image: require('../assets/miltech machine bg remover/VMC-1-removebg-preview.png'),
     control: 'FANUC 0-M',
     specs: {
       'Table Size'       : '1500 × 500 mm',
@@ -29,8 +27,7 @@ export const machines = [
     make: 'OKK — Japan',
     type: 'Vertical Machining Centre (4-Axis)',
     highlight: 'High-precision Japanese 4-axis VMC for complex aerospace profiles and multi-face machining',
-    // CNC operator at control panel
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+    image: require('../assets/miltech machine bg remover/OKK___Japan-removebg-preview.png'),
     control: 'FANUC',
     specs: {
       'Table Size'        : '1600 × 700 mm',
@@ -47,12 +44,11 @@ export const machines = [
   {
     id: 3,
     unit: 1,
-    name: 'VTL-1 Webster Bennett',
+    name: 'VTL Webster Bennett',
     make: 'Webster Bennett — UK',
     type: 'Vertical Turret Lathe',
     highlight: 'British-built heavy-duty VTL for turning large diameter rings, discs, and flanges',
-    // Lathe / turning operation
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
+    image: require('../assets/miltech machine bg remover/WEBSTER_BENNETT-removebg-preview.png'),
     control: 'CNC Retrofit',
     specs: {
       'Chuck Diameter'  : '1200 mm',
@@ -70,8 +66,7 @@ export const machines = [
     make: 'SNK — Japan',
     type: 'CNC Boring & Milling Machine',
     highlight: 'Heavy-duty Japanese floor-type boring mill for large aerospace structural components',
-    // Heavy industrial milling
-    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80',
+    image: require('../assets/miltech machine bg remover/SNK-VMC.webp'),
     control: 'Mitsubishi CNC',
     specs: {
       'Table Size'     : '3350 × 3000 mm',
@@ -91,7 +86,6 @@ export const machines = [
     make: 'Unit 1 Facility',
     type: 'Electric Overhead Travelling Crane',
     highlight: '4-ton EOT crane for safe and precise positioning of large workpieces across Unit 1',
-    // Industrial overhead crane / factory
     image: 'https://images.unsplash.com/photo-1518364538800-6bae3c2ea0f2?w=800&q=80',
     control: 'Pendant / Remote Control',
     specs: {
@@ -109,9 +103,8 @@ export const machines = [
     name: 'BERTHIEZ VTL 8.2m',
     make: 'BERTHIEZ — France',
     type: 'Heavy Duty CNC Vertical Turning Lathe',
-    highlight: 'FLAGSHIP MACHINE — 8.2m swing diameter, 100-tonne table capacity. One of the largest CNC VTLs in South Asia. Used for all major ISRO PSLV and GSLV ring components.',
-    // Large industrial turning / metalworking sparks
-    image: 'https://images.unsplash.com/photo-1533106958148-daaeab8b83fe?w=800&q=80',
+    highlight: 'FLAGSHIP — 8.2m swing, 100T table capacity. One of the largest CNC VTLs in South Asia. Used for all major ISRO PSLV and GSLV ring components.',
+    image: require('../assets/miltech machine bg remover/VTL-removebg-preview.png'),
     control: 'Siemens 840D',
     specs: {
       'Max. Swing Diameter' : 'Ø 8200 mm',
@@ -131,8 +124,7 @@ export const machines = [
     make: 'KOLB — Germany',
     type: 'CNC Gantry Boring & Milling Machine',
     highlight: '12.5m X-axis German gantry boring machine for very large structural, windmill, and aerospace components',
-    // Precision measurement / industrial machining
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80',
+    image: require('../assets/miltech machine bg remover/kolb-u2013-germany.jpeg'),
     control: 'Siemens CNC',
     specs: {
       'X Axis Travel'  : '12500 mm',
@@ -151,8 +143,7 @@ export const machines = [
     name: 'EOT Cranes 25T + 10T',
     make: 'Unit 2 Facility',
     type: 'Electric Overhead Travelling Cranes',
-    highlight: '25-tonne + 10-tonne tandem EOT cranes enabling safe handling and precise positioning of massive 100-tonne aerospace components in Unit 2',
-    // Factory overhead crane / heavy lifting
+    highlight: '25T + 10T tandem EOT cranes for safe handling of massive 100-tonne aerospace components in Unit 2',
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
     control: 'Pendant / Remote Control',
     specs: {

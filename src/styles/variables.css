@@ -1,53 +1,53 @@
 :root {
-  /* VIBRANT LIGHT THEME */
-  --bg:          #F8FAFE;
+  /* ── PROFESSIONAL STEEL THEME — No rainbow ── */
+  --bg:          #F4F6F9;
   --bg-2:        #FFFFFF;
-  --bg-3:        #EEF2FF;
-  --bg-4:        #F0F9FF;
+  --bg-3:        #EDF0F5;
+  --bg-4:        #E8ECF2;
 
   /* Brand */
-  --red:         #E8192C;
-  --red-dk:      #B01020;
-  --red-lt:      rgba(232,25,44,0.1);
-  --red-glow:    rgba(232,25,44,0.3);
+  --red:         #C8102E;
+  --red-dk:      #9B0D22;
+  --red-lt:      rgba(200,16,46,0.09);
+  --red-glow:    rgba(200,16,46,0.25);
 
-  /* Accent palette */
-  --indigo:      #4F46E5;
-  --indigo-lt:   rgba(79,70,229,0.1);
-  --blue:        #0EA5E9;
-  --blue-lt:     rgba(14,165,233,0.1);
-  --violet:      #7C3AED;
-  --violet-lt:   rgba(124,58,237,0.1);
-  --amber:       #F59E0B;
-  --amber-lt:    rgba(245,158,11,0.12);
-  --emerald:     #10B981;
-  --emerald-lt:  rgba(16,185,129,0.1);
-  --rose:        #F43F5E;
-  --rose-lt:     rgba(244,63,94,0.1);
-  --orange:      #EA580C;
+  /* Steel / Navy (primary accent — replaces indigo) */
+  --indigo:      #1E3A5F;
+  --indigo-lt:   rgba(30,58,95,0.08);
+  --blue:        #2563EB;
+  --blue-lt:     rgba(37,99,235,0.08);
+  --violet:      #1E3A5F;
+  --violet-lt:   rgba(30,58,95,0.08);
+  --amber:       #B45309;
+  --amber-lt:    rgba(180,83,9,0.10);
+  --emerald:     #0F7254;
+  --emerald-lt:  rgba(15,114,84,0.10);
+  --rose:        #C8102E;
+  --rose-lt:     rgba(200,16,46,0.09);
+  --orange:      #C05621;
 
-  /* Text */
-  --txt:         #0F172A;
-  --txt-2:       #334155;
-  --txt-3:       #64748B;
-  --txt-4:       #94A3B8;
+  /* Text — deep charcoal */
+  --txt:         #0D1B2A;
+  --txt-2:       #1E3A5F;
+  --txt-3:       #4A6080;
+  --txt-4:       #7A91A8;
 
   /* Glass */
-  --glass:       rgba(255,255,255,0.75);
-  --glass-2:     rgba(255,255,255,0.55);
-  --glass-b:     rgba(100,116,139,0.15);
-  --glass-b2:    rgba(79,70,229,0.2);
+  --glass:       rgba(255,255,255,0.85);
+  --glass-2:     rgba(255,255,255,0.65);
+  --glass-b:     rgba(30,58,95,0.10);
+  --glass-b2:    rgba(30,58,95,0.18);
 
-  /* Gradients */
-  --g-hero:      linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);
-  --g-red:       linear-gradient(135deg,#E8192C,#EA580C);
-  --g-indigo:    linear-gradient(135deg,#4F46E5,#7C3AED);
-  --g-blue:      linear-gradient(135deg,#0EA5E9,#4F46E5);
-  --g-amber:     linear-gradient(135deg,#F59E0B,#EA580C);
-  --g-emerald:   linear-gradient(135deg,#10B981,#0EA5E9);
-  --g-card:      linear-gradient(135deg,rgba(255,255,255,0.9),rgba(238,242,255,0.8));
+  /* Gradients — steel + navy palette only */
+  --g-hero:      linear-gradient(135deg,#0D1B2A 0%,#1E3A5F 60%,#0D1B2A 100%);
+  --g-red:       linear-gradient(135deg,#C8102E,#9B0D22);
+  --g-indigo:    linear-gradient(135deg,#1E3A5F,#2563EB);
+  --g-blue:      linear-gradient(135deg,#2563EB,#1E3A5F);
+  --g-amber:     linear-gradient(135deg,#B45309,#C05621);
+  --g-emerald:   linear-gradient(135deg,#0F7254,#2563EB);
+  --g-card:      linear-gradient(160deg,#FFFFFF 0%,#F4F6F9 100%);
 
-  /* Typography */
+  /* Typography — clean, industrial */
   --f-display:   'Rajdhani','Impact',sans-serif;
   --f-head:      'Oswald','Arial Narrow',sans-serif;
   --f-body:      'Inter','Helvetica Neue',sans-serif;
@@ -60,42 +60,42 @@
   --s-xl:  6rem;
 
   /* Shape */
-  --r-sm:  6px;
-  --r-md:  12px;
-  --r-lg:  20px;
-  --r-xl:  28px;
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  14px;
+  --r-xl:  20px;
 
   /* Motion */
   --ease:  cubic-bezier(0.16,1,0.3,1);
   --fast:  0.18s;
-  --med:   0.4s;
+  --med:   0.36s;
 
-  /* Shadows */
-  --sh-sm:    0 2px 8px rgba(15,23,42,0.08);
-  --sh-md:    0 8px 30px rgba(15,23,42,0.12);
-  --sh-lg:    0 20px 60px rgba(15,23,42,0.15);
-  --sh-red:   0 8px 30px rgba(232,25,44,0.35);
-  --sh-ind:   0 8px 30px rgba(79,70,229,0.35);
-  --sh-card:  0 4px 20px rgba(15,23,42,0.08),0 1px 3px rgba(15,23,42,0.06);
+  /* Shadows — steel-toned, minimal */
+  --sh-sm:    0 2px 8px rgba(13,27,42,0.07);
+  --sh-md:    0 6px 24px rgba(13,27,42,0.10);
+  --sh-lg:    0 16px 48px rgba(13,27,42,0.12);
+  --sh-red:   0 6px 24px rgba(200,16,46,0.28);
+  --sh-ind:   0 6px 24px rgba(30,58,95,0.28);
+  --sh-card:  0 2px 12px rgba(13,27,42,0.06),0 1px 3px rgba(13,27,42,0.04);
 
   --nav-h: 72px;
 
-  /* ── LEGACY ALIASES (backward compat for old JS inline styles) ── */
-  --clr-red:        #E8192C;
-  --clr-red-dark:   #B01020;
-  --clr-gold:       #F59E0B;
-  --clr-cyan:       #0EA5E9;
-  --clr-grey:       #64748B;
-  --clr-navy:       #0F172A;
-  --clr-navy-2:     #1E293B;
-  --clr-navy-3:     #0F172A;
-  --clr-text-2:     #334155;
-  --clr-text-3:     #64748B;
-  --clr-white:      #0F172A;
-  --color-red:      #E8192C;
-  --color-text:     #0F172A;
-  --color-text-muted: #64748B;
-  --color-gold:     #F59E0B;
+  /* ── LEGACY ALIASES ── */
+  --clr-red:        #C8102E;
+  --clr-red-dark:   #9B0D22;
+  --clr-gold:       #B45309;
+  --clr-cyan:       #2563EB;
+  --clr-grey:       #4A6080;
+  --clr-navy:       #0D1B2A;
+  --clr-navy-2:     #1E3A5F;
+  --clr-navy-3:     #0D1B2A;
+  --clr-text-2:     #1E3A5F;
+  --clr-text-3:     #4A6080;
+  --clr-white:      #0D1B2A;
+  --color-red:      #C8102E;
+  --color-text:     #0D1B2A;
+  --color-text-muted: #4A6080;
+  --color-gold:     #B45309;
   --font-display:   'Rajdhani', sans-serif;
   --font-accent:    'Oswald', sans-serif;
   --font-body:      'Inter', sans-serif;
