@@ -1,5 +1,4 @@
 import React from 'react';
-import buildingImg from '../../assets/building.jpg';
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import logoBrahmos from '../../assets/miltech logo/BrahMos_Aerospace.svg.png';
@@ -58,7 +57,7 @@ const AboutUs = () => {
       <section className="section about-who" ref={whoRef}>
         <div className="container about-who__grid">
           <div className="about-who__img reveal">
-            <img src={buildingImg} alt="CNC manufacturing facility" />
+            <img src="https://plus.unsplash.com/premium_photo-1682144383927-045b23413c15?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2VtZW50JTIwZmFjdG9yeXxlbnwwfHwwfHx8MA%3D%3D" alt="CNC manufacturing facility" />
             <div className="about-who__img-badge">
               <span>ISO 9001:2015</span>
               <span>Certified</span>
