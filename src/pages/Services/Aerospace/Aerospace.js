@@ -36,23 +36,22 @@ const aerospaceProducts = [
 ];
 
 const stats = [
-  { value: '25+',   label: 'Years in Aerospace' },
+  { value: '25+',    label: 'Years in Aerospace' },
   { value: '0.02mm', label: 'Tolerance Accuracy' },
-  { value: '100T',  label: 'Max Load Capacity' },
-  { value: '8.2m',  label: 'Max Swing Diameter' },
+  { value: '100T',   label: 'Max Load Capacity' },
+  { value: '8.2m',   label: 'Max Swing Diameter' },
 ];
 
 // ── ROCKET RING ASSEMBLY SCENE ──
-// Landscape rocket with ring (isometric look), ring clicks and slides into cylinder
 function RocketAssemblyScene() {
-  const [phase, setPhase]       = useState('idle');   // idle | flying | assembled | returning
+  const [phase, setPhase]       = useState('idle');
   const [ringAnim, setRingAnim] = useState({ x: 0, scale: 1, rotate: 0, progress: 0 });
   const [hint, setHint]         = useState('Click the ring → it will fit into the rocket cylinder');
-  const animRef = useRef(null);
+  const animRef  = useRef(null);
   const phaseRef = useRef('idle');
 
-  const easeOut  = t => 1 - Math.pow(1 - t, 3);
-  const easeIn   = t => t * t * t;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeIn  = t => t * t * t;
 
   const startAssemble = () => {
     if (phaseRef.current !== 'idle') return;
@@ -61,18 +60,11 @@ function RocketAssemblyScene() {
     setHint('Ring integrating into cylinder...');
     let start = null;
     const dur = 1100;
-
     const animate = ts => {
       if (!start) start = ts;
       const t    = Math.min((ts - start) / dur, 1);
       const ease = easeOut(t);
-      // Ring slides LEFT (negative x) to fit into rocket cylinder mid-section
-      setRingAnim({
-        x:        ease * -1,          // CSS will translate via progress
-        scale:    1 - ease * 0.32,    // ring shrinks as it fits into cylinder
-        rotate:   ease * 540,         // 1.5 rotations
-        progress: ease,
-      });
+      setRingAnim({ x: ease * -1, scale: 1 - ease * 0.32, rotate: ease * 540, progress: ease });
       if (t < 1) {
         animRef.current = requestAnimationFrame(animate);
       } else {
@@ -91,17 +83,11 @@ function RocketAssemblyScene() {
     setHint('Disassembling...');
     let start = null;
     const dur = 800;
-
     const animate = ts => {
       if (!start) start = ts;
       const t    = Math.min((ts - start) / dur, 1);
       const ease = easeIn(t);
-      setRingAnim({
-        x:        1 - ease,
-        scale:    0.68 + ease * 0.32,
-        rotate:   540 - ease * 540,
-        progress: 1 - ease,
-      });
+      setRingAnim({ x: 1 - ease, scale: 0.68 + ease * 0.32, rotate: 540 - ease * 540, progress: 1 - ease });
       if (t < 1) {
         animRef.current = requestAnimationFrame(animate);
       } else {
@@ -119,15 +105,10 @@ function RocketAssemblyScene() {
   const fp          = ringAnim.progress || 0;
   const isAssembled = phase === 'assembled';
   const isIdle      = phase === 'idle';
-
-  // Ring translation: moves from right side toward rocket cylinder center
-  // In landscape: rocket on left, ring on right
-  // ring moves left by fp * 54% (toward cylinder area of rocket)
   const ringTranslateX = `calc(${-fp * 54}%)`;
 
   return (
     <div className="ras">
-      {/* Stars bg */}
       <div className="ras__bg">
         {[...Array(60)].map((_, i) => (
           <div key={i} className="ras__star" style={{
@@ -140,39 +121,21 @@ function RocketAssemblyScene() {
           }} />
         ))}
       </div>
-
-      {/* Earth glow at bottom */}
       <div className="ras__earth" />
-
-      {/* Scene inner */}
       <div className="ras__inner">
-
-        {/* ROCKET — landscape (horizontal) on LEFT */}
         <div
           className={`ras__rocket ${isAssembled ? 'ras__rocket--glow' : ''}`}
           onClick={isAssembled ? startDisassemble : undefined}
           style={{ cursor: isAssembled ? 'pointer' : 'default' }}
         >
-          {/* Landscape rocket image */}
-          <img
-            src={rocketImg}
-            alt="Rocket"
-            className="ras__rocket-img"
-            style={{
-              transform: `rotate(-90deg)`,   // portrait rocket → rotate to landscape
-            }}
-          />
-          {/* Cylinder slot indicator */}
+          <img src={rocketImg} alt="Rocket" className="ras__rocket-img" style={{ transform: 'rotate(-90deg)' }} />
           <div className={`ras__cylinder-slot ${fp > 0.2 ? 'ras__cylinder-slot--active' : ''}`}>
             {fp > 0.2 && fp < 0.95 && (
               <div className="ras__cylinder-progress" style={{ width: `${fp * 100}%` }} />
             )}
           </div>
-          {/* Assembled glow ring on rocket */}
           {isAssembled && <div className="ras__fit-glow" />}
         </div>
-
-        {/* RING — on RIGHT, moves toward rocket */}
         <div
           className={`ras__ring ${isIdle ? 'ras__ring--float' : ''} ${isAssembled ? 'ras__ring--fitted' : ''}`}
           style={{
@@ -182,20 +145,14 @@ function RocketAssemblyScene() {
           onClick={isIdle ? startAssemble : undefined}
         >
           <img src={ringImg} alt="AE Ring Ø2250mm" className="ras__ring-img" />
-          {/* Isometric shine overlay */}
           <div className="ras__ring-shine" />
           {isIdle && <div className="ras__ring-pulse" />}
         </div>
-
       </div>
-
-      {/* Hint bar */}
       <div className={`ras__hint ${isAssembled ? 'ras__hint--done' : ''}`}>
         <span className="ras__hint-dot" />
         {hint}
       </div>
-
-      {/* Labels */}
       <div className="ras__labels">
         <div className="ras__label">
           <span>ISRO PSLV Rocket</span>
@@ -211,9 +168,8 @@ function RocketAssemblyScene() {
 }
 
 // ── PRODUCT SCROLL CARDS ──
-// Cards scroll up on viewport entry — cascade from bottom
 function AeroProductCard({ product, index }) {
-  const ref    = useRef(null);
+  const ref = useRef(null);
   const [vis, setVis] = useState(false);
 
   useEffect(() => {
@@ -235,21 +191,14 @@ function AeroProductCard({ product, index }) {
       className={`apcard ${vis ? 'apcard--visible' : ''} ${isEven ? 'apcard--even' : 'apcard--odd'}`}
       style={{ transitionDelay: `${(index % 4) * 0.09}s` }}
     >
-      {/* LEFT: image */}
       <div className="apcard__img-col">
         <div className="apcard__img-wrap">
-          <img
-            src={product.img}
-            alt={product.name}
-            className="apcard__img"
-            onError={e => { e.target.style.display = 'none'; }}
-          />
+          <img src={product.img} alt={product.name} className="apcard__img"
+            onError={e => { e.target.style.display = 'none'; }} />
           <div className="apcard__img-overlay" />
           <span className="apcard__client-badge">{product.client}</span>
         </div>
       </div>
-
-      {/* RIGHT: details */}
       <div className="apcard__info">
         <div className="apcard__num">{String(product.id).padStart(2, '0')}</div>
         <h3 className="apcard__name">{product.name}</h3>
@@ -278,7 +227,6 @@ export default function Aerospace() {
   return (
     <div className="aerospace-page">
 
-      {/* ── HERO ── */}
       <section className="aero-hero">
         <div className="aero-hero__bg" />
         <div className="container aero-hero__content">
@@ -306,7 +254,6 @@ export default function Aerospace() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
       <section className="aero-stats-section">
         <div className="container">
           <div className="aero-stats-grid aero-reveal">
@@ -320,7 +267,6 @@ export default function Aerospace() {
         </div>
       </section>
 
-      {/* ── ABOUT ── */}
       <section className="aero-about section">
         <div className="container">
           <div className="aero-about__grid">
@@ -332,8 +278,7 @@ export default function Aerospace() {
               <div className="line-red" />
               <p className="aero-about__p">
                 Since 2002, MILLTECH CNC has been at the forefront of aerospace component manufacturing in India.
-                Our Unit 2 facility houses a BERTHIEZ 8.2m CNC VTL — one of the largest in South Asia — enabling us
-                to machine structures most shops cannot handle.
+                Our Unit 2 facility houses a BERTHIEZ 8.2m CNC VTL — one of the largest in South Asia.
               </p>
               <p className="aero-about__p">
                 We work directly with ISRO's VSSC and LPSC supplying rings, canisters, and assembly fixtures for PSLV
@@ -345,10 +290,10 @@ export default function Aerospace() {
             </div>
             <div className="aero-caps-grid aero-reveal">
               {[
-                { icon: '⚙️', title: 'CNC Vertical Turning',  desc: 'BERTHIEZ 8.2m VTL with 100-ton capacity and 0.02mm accuracy' },
-                { icon: '📐', title: 'MasterCAM 26',          desc: 'In-house 4/5-axis CNC programming for complex toolpaths' },
-                { icon: '⚗️', title: 'Material Expertise',    desc: 'Aluminium alloys, SS304/316, and high-strength mild steel' },
-                { icon: '🔬', title: 'Dimensional Inspection', desc: 'TESA Uni-master, Pi Tapes, tubular micrometers to 5000mm' },
+                { icon: '⚙️', title: 'CNC Vertical Turning',   desc: 'BERTHIEZ 8.2m VTL with 100-ton capacity and 0.02mm accuracy' },
+                { icon: '📐', title: 'MasterCAM 26',           desc: 'In-house 4/5-axis CNC programming for complex toolpaths' },
+                { icon: '⚗️', title: 'Material Expertise',     desc: 'Aluminium alloys, SS304/316, and high-strength mild steel' },
+                { icon: '🔬', title: 'Dimensional Inspection',  desc: 'TESA Uni-master, Pi Tapes, tubular micrometers to 5000mm' },
               ].map((c, i) => (
                 <div key={i} className="aero-cap-card">
                   <span className="aero-cap-icon">{c.icon}</span>
@@ -361,7 +306,6 @@ export default function Aerospace() {
         </div>
       </section>
 
-      {/* ── RING ROCKET ASSEMBLY ANIMATION ── */}
       <section className="aero-3d-section section">
         <div className="container">
           <div className="aero-reveal" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -376,7 +320,6 @@ export default function Aerospace() {
         </div>
       </section>
 
-      {/* ── PRODUCTS — Scroll flow cards with images ── */}
       <section className="aero-products section">
         <div className="container">
           <div className="aero-reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
@@ -391,7 +334,6 @@ export default function Aerospace() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
       <section className="aero-cta">
         <div className="aero-cta__bg" />
         <div className="container aero-cta__inner aero-reveal">

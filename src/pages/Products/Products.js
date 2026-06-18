@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import ReviewSlider from '../../components/ReviewSlider/ReviewSlider';
 import useScrollReveal from '../../hooks/useScrollReveal';
@@ -12,9 +11,9 @@ export default function Products() {
   const gridRef = useScrollReveal();
 
   const categories = [
-    { label: 'All Products', value: 'all', count: products.length },
-    { label: 'Aerospace', value: 'aerospace', count: products.filter(p=>p.category==='aerospace').length },
-    { label: 'Defence', value: 'defence', count: products.filter(p=>p.category==='defence').length },
+    { label: 'All Products', value: 'all',       count: products.length },
+    { label: 'Aerospace',    value: 'aerospace',  count: products.filter(p => p.category === 'aerospace').length },
+    { label: 'Defence',      value: 'defence',    count: products.filter(p => p.category === 'defence').length },
   ];
 
   const filtered = activeCategory === 'all' ? products : products.filter(p => p.category === activeCategory);
@@ -26,7 +25,7 @@ export default function Products() {
         <div className="container page-hero__content">
           <p className="page-hero__tag">Manufacturing Excellence</p>
           <h1 className="page-hero__title display">Our Products</h1>
-          <p className="page-hero__sub">Precision-engineered components for ISRO, BrahMos, L&T and India's most demanding aerospace programmes.</p>
+          <p className="page-hero__sub">Precision-engineered components for ISRO, BrahMos, L&amp;T and India's most demanding aerospace programmes.</p>
         </div>
       </section>
 
@@ -51,7 +50,7 @@ export default function Products() {
         <div className="container">
           {filtered.length > 0 ? (
             <div className="products-grid stagger">
-              {filtered.map((p, i) => (
+              {filtered.map((p) => (
                 <div key={p.id} className="reveal">
                   <ProductCard product={p}/>
                 </div>
@@ -65,8 +64,8 @@ export default function Products() {
 
       <section className="section bg-indigo-lt">
         <div className="container">
-          <p className="eyebrow" style={{justifyContent:'center'}}>Client Testimonials</p>
-          <h2 className="section-title" style={{textAlign:'center',marginBottom:'3rem'}}>What Our Clients Say</h2>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>Client Testimonials</p>
+          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>What Our Clients Say</h2>
           <ReviewSlider reviews={reviews}/>
         </div>
       </section>
