@@ -1,57 +1,56 @@
 :root {
-  /* ── PROFESSIONAL STEEL THEME — No rainbow ── */
-  --bg:          #F4F6F9;
+  /* ── VIBRANT LIGHT THEME ── */
+  --bg:          #F8FAFE;
   --bg-2:        #FFFFFF;
-  --bg-3:        #EDF0F5;
-  --bg-4:        #E8ECF2;
+  --bg-3:        #EEF2FF;
+  --bg-4:        #F0F9FF;
 
   /* Brand */
   --red:         #C8102E;
-  --red-dk:      #9B0D22;
-  --red-lt:      rgba(200,16,46,0.09);
-  --red-glow:    rgba(200,16,46,0.25);
+  --red-dk:      #9B0E23;
+  --red-lt:      rgba(200,16,46,0.08);
+  --red-glow:    rgba(200,16,46,0.3);
 
-  /* Steel / Navy (primary accent — replaces indigo) */
-  --indigo:      #1E3A5F;
-  --indigo-lt:   rgba(30,58,95,0.08);
-  --blue:        #2563EB;
-  --blue-lt:     rgba(37,99,235,0.08);
-  --violet:      #1E3A5F;
-  --violet-lt:   rgba(30,58,95,0.08);
-  --amber:       #B45309;
-  --amber-lt:    rgba(180,83,9,0.10);
-  --emerald:     #0F7254;
-  --emerald-lt:  rgba(15,114,84,0.10);
-  --rose:        #C8102E;
-  --rose-lt:     rgba(200,16,46,0.09);
-  --orange:      #C05621;
+  /* Accents */
+  --indigo:      #1E3A8A;
+  --indigo-lt:   rgba(30,58,138,0.08);
+  --blue:        #0284C7;
+  --blue-lt:     rgba(2,132,199,0.1);
+  --violet:      #6D28D9;
+  --violet-lt:   rgba(109,40,217,0.1);
+  --amber:       #D97706;
+  --amber-lt:    rgba(217,119,6,0.1);
+  --emerald:     #059669;
+  --emerald-lt:  rgba(5,150,105,0.1);
 
-  /* Text — deep charcoal */
-  --txt:         #0D1B2A;
-  --txt-2:       #1E3A5F;
-  --txt-3:       #4A6080;
-  --txt-4:       #7A91A8;
+  /* Text */
+  --txt:         #0F172A;
+  --txt-2:       #1E293B;
+  --txt-3:       #475569;
+  --txt-4:       #94A3B8;
 
   /* Glass */
-  --glass:       rgba(255,255,255,0.85);
-  --glass-2:     rgba(255,255,255,0.65);
-  --glass-b:     rgba(30,58,95,0.10);
-  --glass-b2:    rgba(30,58,95,0.18);
+  --glass:       rgba(255,255,255,0.8);
+  --glass-b:     rgba(100,116,139,0.12);
+  --glass-b2:    rgba(30,58,138,0.18);
 
-  /* Gradients — steel + navy palette only */
-  --g-hero:      linear-gradient(135deg,#0D1B2A 0%,#1E3A5F 60%,#0D1B2A 100%);
-  --g-red:       linear-gradient(135deg,#C8102E,#9B0D22);
-  --g-indigo:    linear-gradient(135deg,#1E3A5F,#2563EB);
-  --g-blue:      linear-gradient(135deg,#2563EB,#1E3A5F);
-  --g-amber:     linear-gradient(135deg,#B45309,#C05621);
-  --g-emerald:   linear-gradient(135deg,#0F7254,#2563EB);
-  --g-card:      linear-gradient(160deg,#FFFFFF 0%,#F4F6F9 100%);
+  /* Gradients */
+  --g-red:       linear-gradient(135deg, #C8102E, #9B0E23);
+  --g-indigo:    linear-gradient(135deg, #1E3A8A, #1D4ED8);
+  --g-blue:      linear-gradient(135deg, #0284C7, #1E3A8A);
+  --g-amber:     linear-gradient(135deg, #D97706, #B45309);
+  --g-emerald:   linear-gradient(135deg, #059669, #0284C7);
+  --g-card:      linear-gradient(135deg, rgba(255,255,255,0.95), rgba(238,242,255,0.85));
 
-  /* Typography — clean, industrial */
-  --f-display:   'Rajdhani','Impact',sans-serif;
-  --f-head:      'Oswald','Arial Narrow',sans-serif;
-  --f-body:      'Inter','Helvetica Neue',sans-serif;
-  --f-mono:      'JetBrains Mono','Courier New',monospace;
+  /* ── PROFESSIONAL TYPOGRAPHY ── */
+  /* Display: Bold industrial headings */
+  --f-display:   'Barlow Condensed', 'Arial Narrow', sans-serif;
+  /* Headings: Clean engineering feel */
+  --f-head:      'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  /* Body: Highly readable */
+  --f-body:      'Inter', 'Segoe UI', system-ui, sans-serif;
+  /* Mono: Technical specs */
+  --f-mono:      'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   /* Spacing */
   --s-sm:  1rem;
@@ -61,43 +60,22 @@
 
   /* Shape */
   --r-sm:  4px;
-  --r-md:  8px;
-  --r-lg:  14px;
-  --r-xl:  20px;
+  --r-md:  10px;
+  --r-lg:  18px;
+  --r-xl:  26px;
 
   /* Motion */
-  --ease:  cubic-bezier(0.16,1,0.3,1);
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
   --fast:  0.18s;
-  --med:   0.36s;
+  --med:   0.4s;
 
-  /* Shadows — steel-toned, minimal */
-  --sh-sm:    0 2px 8px rgba(13,27,42,0.07);
-  --sh-md:    0 6px 24px rgba(13,27,42,0.10);
-  --sh-lg:    0 16px 48px rgba(13,27,42,0.12);
-  --sh-red:   0 6px 24px rgba(200,16,46,0.28);
-  --sh-ind:   0 6px 24px rgba(30,58,95,0.28);
-  --sh-card:  0 2px 12px rgba(13,27,42,0.06),0 1px 3px rgba(13,27,42,0.04);
+  /* Shadows */
+  --sh-sm:    0 1px 4px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --sh-md:    0 4px 16px rgba(15,23,42,0.10), 0 2px 6px rgba(15,23,42,0.06);
+  --sh-lg:    0 16px 48px rgba(15,23,42,0.14), 0 4px 12px rgba(15,23,42,0.08);
+  --sh-red:   0 6px 24px rgba(200,16,46,0.3);
+  --sh-ind:   0 6px 24px rgba(30,58,138,0.3);
+  --sh-card:  0 2px 8px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04);
 
   --nav-h: 72px;
-
-  /* ── LEGACY ALIASES ── */
-  --clr-red:        #C8102E;
-  --clr-red-dark:   #9B0D22;
-  --clr-gold:       #B45309;
-  --clr-cyan:       #2563EB;
-  --clr-grey:       #4A6080;
-  --clr-navy:       #0D1B2A;
-  --clr-navy-2:     #1E3A5F;
-  --clr-navy-3:     #0D1B2A;
-  --clr-text-2:     #1E3A5F;
-  --clr-text-3:     #4A6080;
-  --clr-white:      #0D1B2A;
-  --color-red:      #C8102E;
-  --color-text:     #0D1B2A;
-  --color-text-muted: #4A6080;
-  --color-gold:     #B45309;
-  --font-display:   'Rajdhani', sans-serif;
-  --font-accent:    'Oswald', sans-serif;
-  --font-body:      'Inter', sans-serif;
-  --font-mono:      'JetBrains Mono', monospace;
 }

@@ -12,7 +12,7 @@ import './AboutUs.css';
 
 const TIMELINE = [
   { year: '2002', title: 'Company Founded', desc: 'MILLTECH CNC established in the year 2002 with a bold and innovative high-tech initiation of well-qualified MILLTECH Engineers.' },
-  { year: '2004', title: 'Unit 1 — Ekattuthangal', desc: 'CNC Machining Unit I fully operational at Ekattuthangal, Chennai with VMC and VTL machines.' },
+  { year: '2004', title: 'Unit 1 — Thirumudivakkam', desc: 'CNC Machining Unit I fully operational at Thirumudivakkam, Chennai with VMC and VTL machines.' },
   { year: '2010', title: 'ISRO Partnership', desc: 'First critical aerospace components delivered to ISRO. Beginning of a long-standing trust relationship.' },
   { year: '2015', title: 'ISO 9001:2015 Certified', desc: 'Unit I achieves ISO 9001:2015 certification — confirming our quality management system excellence.' },
   { year: '2018', title: 'Unit 2 — Thirumudivakkam', desc: 'Heavy Duty Machining Unit 2 commissioned with BERTHIEZ 8.2m VTL and KOLB 12.5m Gantry machine.' },
@@ -69,7 +69,7 @@ const AboutUs = () => {
             <h2 className="section-title reveal from-right delay-1">A Legacy of<br/><span style={{color:'var(--red)'}}>Precision Engineering</span></h2>
             <div className="red-line reveal from-right delay-2" />
             <p className="about-who__body reveal from-right delay-3">
-              MILLTECH CNC is established in the year 2002 with a bold and innovative high-tech initiation of well-qualified MILLTECH Engineers. We started functioning from our CNC Machining Unit I (Ekattuthangal) and added the second Heavy Duty Machining unit at Thirumudivakkam. We got ISO 9001:2015 certification for our Unit I.
+              MILLTECH CNC is established in the year 2002 with a bold and innovative high-tech initiation of well-qualified MILLTECH Engineers. We started functioning from our CNC Machining Unit I and added the second Heavy Duty Machining unit, both located at Thirumudivakkam, Chennai. We got ISO 9001:2015 certification for our Unit I.
             </p>
             <p className="about-who__body reveal from-right delay-4">
               We have more than 25 years of experience in providing high quality heavy and critical Fabrication, machining, Assembly, Surface Treatment, Painting of many engineering goods for different applications — ISRO, BrahMos, Earth moving Equipment, Thermal power plant High Pressure Tanks, Machining of Heavy-forging alloys, Valve Bodies, Impellers, Defence Products, and high precision aerospace components to giant Corporate Companies both Private and Government.
