@@ -72,7 +72,7 @@ const EXPERTISE = [
 function BannerHero() {
   const [current, setCurrent] = useState(0);
   const [prev, setPrev]       = useState(null);
-  const [animDir, setAnimDir] = useState('next');
+const [, setAnimDir] = useState('next');
   const timerRef = useRef(null);
 
   const goTo = useCallback((idx, dir = 'next') => {
