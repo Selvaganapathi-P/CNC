@@ -23,7 +23,6 @@ const AnimatedCounter = ({ value, end, suffix = '', prefix = '', duration = 1800
   useEffect(() => {
     if (!started) return;
     let startTime = null;
-    const startVal = 0;
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;

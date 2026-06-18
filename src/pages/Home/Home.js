@@ -72,10 +72,12 @@ const EXPERTISE = [
 function BannerHero() {
   const [current, setCurrent] = useState(0);
   const [prev, setPrev]       = useState(null);
+  const [animDir, setAnimDir] = useState('next');
   const timerRef = useRef(null);
 
-  const goTo = useCallback((idx) => {
+  const goTo = useCallback((idx, dir = 'next') => {
     setPrev(current);
+    setAnimDir(dir);
     setCurrent(idx);
   }, [current]);
 
@@ -84,6 +86,7 @@ function BannerHero() {
       setCurrent(c => {
         const next = (c + 1) % SLIDES.length;
         setPrev(c);
+        setAnimDir('next');
         return next;
       });
     }, 5500);
@@ -137,7 +140,7 @@ function BannerHero() {
           <button key={i}
             className={`banner-dot ${i === current ? 'banner-dot--active' : ''}`}
             style={{ '--dc': SLIDES[i].accent }}
-            onClick={() => goTo(i)}
+            onClick={() => goTo(i, i > current ? 'next' : 'prev')}
           >
             <span className="banner-dot__label">{s.label}</span>
             {i === current && <span className="banner-dot__progress" />}
@@ -160,7 +163,7 @@ function BannerHero() {
   );
 }
 
-// ── RING ASSEMBLY SCENE ──
+// ── RING ASSEMBLY SCENE (2D Premium) — kept, no rocket animation here ──
 function RingAssemblyScene() {
   const [phase, setPhase]     = useState('idle');
   const [ringPos, setRingPos] = useState({ x: 0, y: 0, scale: 1, opacity: 1, rotate: 0 });
@@ -240,6 +243,7 @@ function RingAssemblyScene() {
       </div>
 
       <div className="ring-scene__inner">
+        {/* Rocket */}
         <div
           className={`ring-rocket ${isAssembled ? 'ring-rocket--assembled' : ''}`}
           onClick={isAssembled ? startDisassemble : undefined}
@@ -250,6 +254,7 @@ function RingAssemblyScene() {
           {isAssembled && <div className="ring-assembled-glow" />}
         </div>
 
+        {/* Ring */}
         <div
           className={`ring-obj ${isIdle ? 'ring-obj--float' : ''} ${isAssembled ? 'ring-obj--fitted' : ''}`}
           style={{
@@ -297,6 +302,7 @@ export default function Home() {
   return (
     <div className="home">
 
+      {/* ══ BANNER HERO (no rocket animation here) ══ */}
       <BannerHero />
 
       {/* ══ STATS ══ */}
@@ -318,7 +324,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ EXPERTISE ══ */}
+      {/* ══ EXPERTISE / EXPLORE MACHINES ══ */}
       <section className="section bg-indigo-lt" ref={expRef}>
         <div className="container">
           <div className="exp-layout">
@@ -469,6 +475,20 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ══ RING ASSEMBLY ══ */}
+      <section className="section bg-indigo-lt">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <p className="eyebrow" style={{ justifyContent: 'center' }}>Interactive Demo</p>
+            <h2 className="section-title">Ring Component Assembly</h2>
+            <p style={{ color: 'var(--txt-3)', fontSize: '0.95rem' }}>
+              Click the ring to see how MILLTECH CNC components integrate into ISRO launch vehicles.
+            </p>
+          </div>
+          <RingAssemblyScene />
         </div>
       </section>
 

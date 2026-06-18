@@ -1,6 +1,5 @@
 import React from 'react';
 import buildingImg from '../../assets/building.jpg';
-import aerospaceImg from '../../assets/aerospace.jpg';
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import logoBrahmos from '../../assets/miltech logo/BrahMos_Aerospace.svg.png';
@@ -9,7 +8,6 @@ import logoIGCAR from '../../assets/miltech logo/Indira_Gandhi_Centre_for_Atomic
 import logoLT from '../../assets/miltech logo/L&T (DEFENCE, ECC, Rubber Processing Machinery), Chennai..png';
 import logoLPSC from '../../assets/miltech logo/Liquid_Propulsion_Systems_Centre_Logo.png';
 import logoVSSC from '../../assets/miltech logo/VIKRAM SARABHAI SPACE RESEARCH CENTRE, Thiruvananthapuram. logo.png';
-import logoMiltech from '../../assets/logoo_mtc-removebg-preview.png';
 import './AboutUs.css';
 
 const TIMELINE = [

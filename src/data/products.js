@@ -1,6 +1,5 @@
 // src/data/products.js — ALL LOCAL ASSETS
 import ringImg         from '../assets/ring.png';
-import rocketImg       from '../assets/rocket-removebg-preview.png';
 import aeRingImg from '../assets/AE RING Ø 2250MM.jpg';
 import canisterImg from '../assets/CANISTER Ø 2250MM.jpg';
 import tBulkRingImg from '../assets/T BULK RING Ø 2840MM (ALU).jpg';
@@ -20,7 +19,7 @@ export const products = [
     tag: 'ISRO',
     material: 'Aluminium Alloy (ALU)',
     diameter: '2840 mm',
-    image: tBulkRingImg,
+    image: ringImg,
     description: 'CNC-machined aluminium fore end ring for ISRO launch vehicle payload fairing. Manufactured to tight aerospace tolerances on our large-capacity BERTHIEZ CNC VTL.',
     specs: { Diameter: 'Ø 2840 mm', Material: 'Aluminium Alloy', Process: 'CNC VTL Turning', Tolerance: '±0.05 mm', Surface: 'As Machined / Anodised', Client: 'ISRO' },
   },
@@ -80,7 +79,7 @@ export const products = [
     tag: 'ISRO / VSSC',
     material: 'High-Strength Steel',
     diameter: '2500 mm',
-    image: canisterImg,
+    image: pic4Img,
     description: 'Larger-diameter canister with extended height for additional payload accommodation on ISRO GSLV and PSLV-XL vehicles.',
     specs: { Diameter: 'Ø 2500 mm', Height: '2250 mm', Material: 'High Strength Steel', Client: 'ISRO GSLV / PSLV-XL' },
   },
